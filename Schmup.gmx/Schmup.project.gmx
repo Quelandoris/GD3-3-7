@@ -11,6 +11,10 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <objects name="objects">
+    <object>objects\Player_ob</object>
+    <object>objects\BoolletBigMacho_ob</object>
+  </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
   </rooms>
