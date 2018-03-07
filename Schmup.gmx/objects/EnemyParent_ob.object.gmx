@@ -100,7 +100,7 @@ if(y &gt;= room_height){
 y -= 32;
 
 }
-if(y &lt;= 0){
+if(y &lt;= 64){
 y += 32;
 
 }
