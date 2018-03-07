@@ -38,7 +38,7 @@ Unit3Cost=200;
 MaxHP=100;
 HP=MaxHP;
 
-Lives=0;
+Lives=1;
 </string>
           </argument>
         </arguments>
