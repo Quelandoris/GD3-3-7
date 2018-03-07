@@ -11,9 +11,16 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <fonts name="fonts">
+    <font>fonts\Font_ft</font>
+  </fonts>
   <objects name="objects">
     <object>objects\Player_ob</object>
+    <object>objects\Player2_ob</object>
     <object>objects\BoolletBigMacho_ob</object>
+    <object>objects\BoolletSmolMacho_ob</object>
+    <object>objects\Player1Manager_ob</object>
+    <object>objects\Player2Manager_ob</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

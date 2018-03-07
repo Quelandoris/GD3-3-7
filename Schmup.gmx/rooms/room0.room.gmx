@@ -52,7 +52,9 @@
   </views>
   <instances>
     <instance objName="Player_ob" x="32" y="416" name="inst_90282FB8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
-    <instance objName="Player_ob" x="768" y="416" name="inst_7A17C84E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="Player2_ob" x="768" y="192" name="inst_88E38E63" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="Player1Manager_ob" x="96" y="256" name="inst_509EC2E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Player2Manager_ob" x="672" y="256" name="inst_2F5F553A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
