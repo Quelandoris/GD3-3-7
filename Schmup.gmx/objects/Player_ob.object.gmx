@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>ShipSpeed=4;
 ShootTimer=0;
+
 </string>
           </argument>
         </arguments>
@@ -56,15 +57,28 @@ var down=false;
 var shoot=false;
 ShootTimer++;
 
+if(global.GameMode == 0){
+    if(keyboard_check(ord("W"))) up = true;
+    if(keyboard_check(ord("S"))) down = true;
+    if(keyboard_check(ord("J"))) shoot = true;
+    
+    
+    
+}
+if(global.GameMode == 1){
+    if(gamepad_axis_value(0,gp_axislv) &gt; 0.25){
+    down = true;
+    }
+    if(gamepad_axis_value(0,gp_axislv) &lt; -0.25){
+    up = true;
+    }
+    if(gamepad_button_check(0,gp_shoulderlb)) shoot = true;
 
-if(keyboard_check(ord("W"))) up = true;
-if(keyboard_check(ord("S"))) down = true;
-if(keyboard_check(ord("J"))) shoot = true;
+}
 
-
-if(up &amp;&amp; y&gt;sprite_height/2) y-=ShipSpeed;
+if(up &amp;&amp; y&gt;sprite_height/2 + 64) y-=ShipSpeed;
 if(down &amp;&amp; y&lt;room_height-(sprite_height/2)) y+=ShipSpeed;
-if(shoot &amp;&amp; ShootTimer&gt;=room_speed/5){
+if(shoot &amp;&amp; ShootTimer&gt;=room_speed/2){
     bullet = instance_create(x+sprite_width/2,y,BoolletBigMacho_ob);
     ShootTimer=0;
 }

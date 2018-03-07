@@ -26,13 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>money=0;
-Income=5; //passive income
+Income=10; //passive income
 IncomeInterval=room_speed/2;
 IntervalTracker=0;
 
 Unit1Cost=50;
-Unit2Cost=100;
-Unit3Cost=200;
+Unit2Cost=125;
+Unit3Cost=225;
 
 
 MaxHP=100;
@@ -45,6 +45,35 @@ Lives=1;
       </action>
     </event>
     <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///HP Code
+if(HP &lt;= 0){
+HP = MaxHP;
+Lives --;
+}
+
+if(Lives &lt;= 0){
+room_goto(win1);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -75,20 +104,22 @@ if(gamepad_button_check_pressed(0,gp_start)){
 if(gamepad_button_check_pressed(0,gp_face3) &amp;&amp; money&gt;Unit1Cost){
     money-=Unit1Cost;
     //spawn the Player2 version of Unit1
-    //instance_create(Player2_ob.x-50,Player2_ob.y,Player2Unit1_ob);  or something
+    Enemy = instance_create(Player2_ob.x-50,Player2_ob.y,SmallE_ob); 
+    Enemy.Dir = -1;
 }
 
 //if y is pressed and player has money, spawn a unit
 if(gamepad_button_check_pressed(0,gp_face4) &amp;&amp; money&gt;Unit2Cost){
     money-=Unit2Cost;
     //spawn the Player2 version of Unit2
-    //instance_create(Player2_ob.x-50,Player2_ob.y,Player2Unit2_ob);  or something
+    Enemy = instance_create(Player2_ob.x-50,Player2_ob.y,MidE_ob); 
+    Enemy.Dir = -1;
 }
 //if b is pressed and player has money, spawn a unit
 if(gamepad_button_check_pressed(0,gp_face2) &amp;&amp; money&gt;Unit3Cost){
     money-=Unit3Cost;
-    //spawn the Player2 version of Unit3
-    //instance_create(Player2_ob.x-50,Player2_ob.y,Player2Unit3_ob); or something
+    Enemy = instance_create(Player2_ob.x-50,Player2_ob.y,LargeE_ob); 
+    Enemy.Dir = -1;
 }
 </string>
           </argument>
