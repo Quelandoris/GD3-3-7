@@ -52,7 +52,7 @@ lifespanMax=3*room_speed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>y-=BigMachoSpeed;
+            <string>x+=BigMachoSpeed;
 lifespan++;
 if(lifespan&gt;=lifespanMax) instance_destroy();
 </string>

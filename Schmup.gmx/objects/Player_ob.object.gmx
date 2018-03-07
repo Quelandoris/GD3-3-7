@@ -51,25 +51,21 @@ ShootTimer=0;
             <kind>1</kind>
             <string>///QUICKLY TO THE CONTROLS
 
-var left=false;
-var right=false;
 var up=false;
 var down=false;
 var shoot=false;
 ShootTimer++;
 
-if(keyboard_check(ord("A"))) left = true;
-if(keyboard_check(ord("D"))) right = true;
+
 if(keyboard_check(ord("W"))) up = true;
 if(keyboard_check(ord("S"))) down = true;
 if(keyboard_check(ord("J"))) shoot = true;
 
-if(left &amp;&amp; x&gt;sprite_width/2) x-=ShipSpeed;
-if(right &amp;&amp; x&lt;room_width-(sprite_width/2)) x+=ShipSpeed;
+
 if(up &amp;&amp; y&gt;sprite_height/2) y-=ShipSpeed;
 if(down &amp;&amp; y&lt;room_height-(sprite_height/2)) y+=ShipSpeed;
-if(shoot &amp;&amp; ShootTimer&gt;=room_speed/10){
-    instance_create(x,y-sprite_height/2,BoolletBigMacho_ob);
+if(shoot &amp;&amp; ShootTimer&gt;=room_speed/5){
+    bullet = instance_create(x+sprite_width/2,y,BoolletBigMacho_ob);
     ShootTimer=0;
 }
 </string>
