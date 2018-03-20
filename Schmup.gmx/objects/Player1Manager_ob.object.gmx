@@ -35,11 +35,12 @@ Unit2Cost=125;
 Unit3Cost=225;
 
 
-MaxHP=100;
+MaxHP=300;
 HP=MaxHP;
 
 Lives=1;
-
+deadtimer=0;
+dead=true;
 </string>
           </argument>
         </arguments>
@@ -151,13 +152,23 @@ if(global.GameMode == 1){
           <argument>
             <kind>1</kind>
             <string>///HP Code
+deadtimer++;
 if(HP &lt;= 0){
-HP = MaxHP;
-Lives --;
+    room_goto(win1);
 }
 
-if(Lives &lt;= 0){
-room_goto(win2);
+
+//Check if collided witrh enemy
+if(place_meeting(x,y,EnemyParent_ob)){
+    //disable player
+    deadtimer=0;
+    instance_destroy(Player_ob);
+}
+if(!instance_exists(Player_ob)){
+    if(deadtimer&gt;=15 &amp;&amp; Lives&gt;0){
+        new = instance_create(64,416,Player_ob);
+        new.image_angle = 270;
+    }
 }
 </string>
           </argument>
@@ -190,7 +201,8 @@ draw_healthbar(10,10,110,30,(HP/MaxHP)*100,c_gray,c_red,c_red,0,true,true);
 draw_set_halign(fa_left);
 draw_set_font(Font_ft);
 draw_set_colour(c_white);
-draw_text(10,32,"LIVES: " + string(Lives));
+if(Lives&gt;0) draw_text(10,32,"LIVES: " + string(Lives));
+else draw_text(10,32,"INSERT COIN");
 
 //Money
 draw_text(10,47,"$" + string(money));

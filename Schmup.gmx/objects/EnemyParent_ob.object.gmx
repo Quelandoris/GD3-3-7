@@ -54,6 +54,7 @@ MoveTime = 0;
 if(Dir &lt;= 0){
     if (place_meeting(x,y,BoolletBigMacho_ob)){
         Bullet = instance_place(x,y,BoolletBigMacho_ob)
+        Player1Manager_ob.money+=50;
         instance_destroy(Bullet);
         instance_destroy();
     }
@@ -62,48 +63,13 @@ if(Dir &lt;= 0){
 else if (Dir &gt;= 0){
  if (place_meeting(x,y,BoolletSmolMacho_ob)){
     Bullet = instance_place(x,y,BoolletSmolMacho_ob)
+    Player2Manager_ob.money+=50;
     instance_destroy(Bullet);
         instance_destroy();
     }
 }
 
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Movement
-MoveTime ++;
-
-if(MoveTime &gt;= 15){
-x += (Dir * Speed);
-MoveTime = 0;
-
-}
-if(y &gt;= room_height){
-y -= 32;
-
-}
-if(y &lt;= 64){
-y += 32;
-
-}
 </string>
           </argument>
         </arguments>
