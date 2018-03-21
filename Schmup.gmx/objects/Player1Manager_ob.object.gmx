@@ -197,17 +197,17 @@ if(!instance_exists(Player_ob)){
             <string>///Draw UI for P1
 
 //HP
-draw_healthbar(10,10,110,30,(HP/MaxHP)*100,c_gray,c_red,c_red,0,true,true);
+draw_healthbar(42,10,142,30,(HP/MaxHP)*100,c_gray,c_red,c_red,0,true,true);
 
 //Lives
 draw_set_halign(fa_left);
 draw_set_font(Font_ft);
 draw_set_colour(c_white);
-if(Lives&gt;0) draw_text(10,32,"LIVES: " + string(Lives));
-else draw_text(10,32,"INSERT COIN");
+if(Lives&gt;0) draw_text(42,32,"LIVES: " + string(Lives));
+else draw_text(42,32,"INSERT COIN");
 
 //Money
-draw_text(10,47,"$" + string(money));
+draw_text(42,47,"$" + string(money));
 </string>
           </argument>
         </arguments>

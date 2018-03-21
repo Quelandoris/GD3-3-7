@@ -28,6 +28,7 @@
             <string>Dir = 1;
 Speed = 16;
 MoveTime = 0;
+
 </string>
           </argument>
         </arguments>
@@ -93,11 +94,15 @@ else if (Dir &gt;= 0){
             <string>///Bounce when hit top or bottom
 
 if(y&lt;=80){
-    Angle=abs(Angle-360);
+    Angle=abs(Angle-360); 
+        y++;   
 }
+
 else if(y&gt;=room_height-25){
-    Angle=360-Angle;
+    Angle=360-Angle;   
+        y--;   
 }
+
 </string>
           </argument>
         </arguments>
