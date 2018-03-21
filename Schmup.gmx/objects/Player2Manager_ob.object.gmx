@@ -111,7 +111,7 @@ if(gamepad_button_check_pressed(0,gp_start)  || keyboard_check_pressed(vk_insert
 if(gamepad_button_check_pressed(0,gp_face3) &amp;&amp; money&gt;Unit1Cost){
     money-=Unit1Cost;
     //spawn the Player2 version of Unit1
-    Enemy = instance_create(Player_ob.x+50,Player2_ob.y,SmallE_ob); 
+    Enemy = instance_create(Player2_ob.x-50,Player2_ob.y,SmallE_ob); 
     Enemy.Dir = -1;
 }
 
@@ -119,22 +119,22 @@ if(gamepad_button_check_pressed(0,gp_face3) &amp;&amp; money&gt;Unit1Cost){
 if(gamepad_button_check_pressed(0,gp_face4) &amp;&amp; money&gt;Unit2Cost){
     money-=Unit2Cost;
     //spawn the Player2 version of Unit2
-    Enemy = instance_create(Player_ob.x+50,Player2_ob.y,MidE_ob); 
+    Enemy = instance_create(Player2_ob.x-50,Player2_ob.y,MidE_ob); 
     Enemy.Dir = -1;
     Enemy.Angle=360-20;
-    Enemy = instance_create(Player_ob.x+50,Player2_ob.y,MidE_ob); 
+    Enemy = instance_create(Player2_ob.x-50,Player2_ob.y,MidE_ob); 
     Enemy.Dir = -1;
     Enemy.Angle=20;
 }
 //if b is pressed and player has money, spawn a unit
 if(gamepad_button_check_pressed(0,gp_face2) &amp;&amp; money&gt;Unit3Cost){
     money-=Unit3Cost;
-    Enemy = instance_create(Player_ob.x+50,Player2_ob.y,LargeE_ob); 
+    Enemy = instance_create(Player2_ob.x-50,Player2_ob.y,LargeE_ob); 
     Enemy.Dir = -1;
-    Enemy = instance_create(Player_ob.x+50,Player2_ob.y,LargeE_ob); 
+    Enemy = instance_create(Player2_ob.x-50,Player2_ob.y,LargeE_ob); 
     Enemy.Dir = -1;
     Enemy.Angle=360-33;
-    Enemy = instance_create(Player_ob.x+50,Player2_ob.y,LargeE_ob); 
+    Enemy = instance_create(Player2_ob.x-50,Player2_ob.y,LargeE_ob); 
     Enemy.Dir = -1;
     Enemy.Angle=33;
 }
@@ -163,17 +163,17 @@ if(gamepad_button_check_pressed(0,gp_face2) &amp;&amp; money&gt;Unit3Cost){
             <string>///Draw UI for P2
 
 //HP
-draw_healthbar(room_width-10,10,room_width-110,30,(HP/MaxHP)*100,c_gray,c_red,c_red,1,true,true);
+draw_healthbar(room_width-42,10,room_width-142,30,(HP/MaxHP)*100,c_gray,c_red,c_red,1,true,true);
 
 //Lives
 draw_set_halign(fa_right);
 draw_set_font(Font_ft);
 draw_set_colour(c_white);
-if(Lives&gt;0) draw_text(room_width-10,32,"LIVES: " + string(Lives));
-else draw_text(room_width-10,32,"INSERT COIN");
+if(Lives&gt;0) draw_text(room_width-42,32,"LIVES: " + string(Lives));
+else draw_text(room_width-42,32,"INSERT COIN");
 
 //Money
-draw_text(room_width-10,47,"$" + string(money));
+draw_text(room_width-42,47,"$" + string(money));
 </string>
           </argument>
         </arguments>

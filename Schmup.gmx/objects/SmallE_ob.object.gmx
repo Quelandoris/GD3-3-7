@@ -40,6 +40,7 @@
           <argument>
             <kind>1</kind>
             <string>Speed=3;
+Angle = 0;
 </string>
           </argument>
         </arguments>
@@ -77,6 +78,20 @@ else if (Dir &gt; 0){
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -94,13 +109,29 @@ else if (Dir &gt; 0){
             <string>///Move
 //move to the right
 if(Dir==1){
-    x+=Speed;
-    if(x&lt;=32) instance_destroy();
+    if(y &gt;= 80){
+        x=x+lengthdir_x(Speed,Angle);
+        y=y+lengthdir_y(Speed,Angle);
+        show_debug_message(string(id) + ": " + string(Angle));
+        if(x&lt;=32) instance_destroy();
+    }
+    else{
+        x+=Speed;
+        if(x&lt;=32) instance_destroy();
+    }
 }
 //move to the left
 else{
-    x-=Speed;
-    if(x&gt;=room_width-32) instance_destroy();
+    if(y&gt;=room_height-25){
+        x=x+lengthdir_x(Speed,Angle);
+        y=y+lengthdir_y(Speed,Angle);
+        show_debug_message(string(id) + ": " + string(Angle));
+        if(x&lt;=32) instance_destroy();
+}
+    else{
+        x-=Speed;
+        if(x&gt;=room_width-32) instance_destroy();
+    }
 }
 </string>
           </argument>

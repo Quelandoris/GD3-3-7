@@ -66,7 +66,7 @@ Speed=2;
             <string>if(Dir &lt; 0){
    Player1Manager_ob.money += 25;
     Enemy = instance_create(x,y + 32,SmallE_ob); 
-    Enemy1 = instance_create(x,y - 32,SmallE_ob); 
+    Enemy1 = instance_create(x, y- 32,SmallE_ob); 
     Enemy1.Dir = -1;
     Enemy.Dir = -1;
 
@@ -74,7 +74,7 @@ Speed=2;
 else if (Dir &gt; 0){
     Player2Manager_ob.money += 25;
      Enemy = instance_create(x,y + 32,SmallE_ob); 
-     Enemy1 = instance_create(x,y - 32,SmallE_ob); 
+     Enemy1 = instance_create(x  ,y - 32,SmallE_ob); 
      Enemy.Dir = 1;
      Enemy1.Dir = 1;
     }
