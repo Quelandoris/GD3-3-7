@@ -92,6 +92,10 @@ if(global.GameMode == 0){
         //spawn the Player1 version of Unit2
         Enemy = instance_create(Player_ob.x+50,Player_ob.y,MidE_ob); 
         Enemy.Dir = 1;
+        Enemy.Angle=360-20;
+        Enemy = instance_create(Player_ob.x+50,Player_ob.y,MidE_ob); 
+        Enemy.Dir = 1;
+        Enemy.Angle=20;
     }
     //if colon is pressed and player has money, spawn a unit
     if(keyboard_check_pressed(186) &amp;&amp; money&gt;Unit3Cost){
@@ -99,13 +103,16 @@ if(global.GameMode == 0){
         //spawn the Player1 version of Unit3
         Enemy = instance_create(Player_ob.x+50,Player_ob.y,LargeE_ob); 
         Enemy.Dir = 1;
+        Enemy = instance_create(Player_ob.x+50,Player_ob.y,LargeE_ob); 
+        Enemy.Dir = 1;
+        Enemy.Angle=360-33;
+        Enemy = instance_create(Player_ob.x+50,Player_ob.y,LargeE_ob); 
+        Enemy.Dir = 1;
+        Enemy.Angle=33;
     }
 }
 
-
-
-
-
+/*
 if(global.GameMode == 1){
     //if k is pressed and player has money, spawn a unit
     if(gamepad_button_check_pressed(0,gp_padl) &amp;&amp; money&gt;Unit1Cost){
@@ -130,7 +137,7 @@ if(global.GameMode == 1){
         Enemy = instance_create(Player_ob.x+50,Player_ob.y,LargeE_ob); 
         Enemy.Dir = 1;
     }
-}
+}*/
 </string>
           </argument>
         </arguments>
@@ -159,13 +166,8 @@ if(HP &lt;= 0){
 
 
 //Check if collided witrh enemy
-if(place_meeting(x,y,EnemyParent_ob)){
-    //disable player
-    deadtimer=0;
-    instance_destroy(Player_ob);
-}
 if(!instance_exists(Player_ob)){
-    if(deadtimer&gt;=15 &amp;&amp; Lives&gt;0){
+    if(deadtimer&gt;=75 &amp;&amp; Lives&gt;0){
         new = instance_create(64,416,Player_ob);
         new.image_angle = 270;
     }
