@@ -39,7 +39,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>Speed=6;
+            <string>Speed=3;
 </string>
           </argument>
         </arguments>
@@ -93,7 +93,7 @@ else if (Dir &gt; 0){
             <kind>1</kind>
             <string>///Move
 //move to the right
-if(Dir=1){
+if(Dir==1){
     x+=Speed;
     if(x&lt;=32) instance_destroy();
 }
