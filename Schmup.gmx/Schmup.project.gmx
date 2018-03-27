@@ -38,6 +38,7 @@
     <object>objects\P1WIn</object>
     <object>objects\P2Win</object>
     <object>objects\obj_restart</object>
+    <object>objects\testforpranch</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\TitleScreen</room>
