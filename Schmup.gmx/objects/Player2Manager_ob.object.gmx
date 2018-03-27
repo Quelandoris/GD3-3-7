@@ -113,7 +113,8 @@ if(instance_exists(Player2_ob)){
         if(gamepad_button_check_pressed(0,gp_face3) &amp;&amp; money&gt;Unit1Cost){
             money-=Unit1Cost;
             //spawn the Player2 version of Unit1
-            Enemy = instance_create(Player2_ob.x-50,Player2_ob.y,SmallE_ob); 
+            Enemy = instance_create(Player2_ob.x-50,Player2_ob.y,SmallE_ob);
+            Enemy.owner=true; 
             Enemy.Dir = -1;
         }
         
@@ -121,22 +122,27 @@ if(instance_exists(Player2_ob)){
         if(gamepad_button_check_pressed(0,gp_face4) &amp;&amp; money&gt;Unit2Cost){
             money-=Unit2Cost;
             //spawn the Player2 version of Unit2
-            Enemy = instance_create(Player2_ob.x-50,Player2_ob.y,MidE_ob); 
+            Enemy = instance_create(Player2_ob.x-50,Player2_ob.y,MidE_ob);
+            Enemy.owner=true;
             Enemy.Dir = -1;
             Enemy.Angle=360-20;
-            Enemy = instance_create(Player2_ob.x-50,Player2_ob.y,MidE_ob); 
+            Enemy = instance_create(Player2_ob.x-50,Player2_ob.y,MidE_ob);
+            Enemy.owner=true;
             Enemy.Dir = -1;
             Enemy.Angle=20;
         }
         //if b is pressed and player has money, spawn a unit
         if(gamepad_button_check_pressed(0,gp_face2) &amp;&amp; money&gt;Unit3Cost){
             money-=Unit3Cost;
-            Enemy = instance_create(Player2_ob.x-50,Player2_ob.y,LargeE_ob); 
+            Enemy = instance_create(Player2_ob.x-50,Player2_ob.y,LargeE_ob);
+            Enemy.owner=true; 
             Enemy.Dir = -1;
-            Enemy = instance_create(Player2_ob.x-50,Player2_ob.y,LargeE_ob); 
+            Enemy = instance_create(Player2_ob.x-50,Player2_ob.y,LargeE_ob);
+            Enemy.owner=true; 
             Enemy.Dir = -1;
             Enemy.Angle=360-33;
-            Enemy = instance_create(Player2_ob.x-50,Player2_ob.y,LargeE_ob); 
+            Enemy = instance_create(Player2_ob.x-50,Player2_ob.y,LargeE_ob);
+            Enemy.owner=true; 
             Enemy.Dir = -1;
             Enemy.Angle=33;
         }

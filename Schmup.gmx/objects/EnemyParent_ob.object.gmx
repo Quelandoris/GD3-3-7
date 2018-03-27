@@ -28,7 +28,7 @@
             <string>Dir = 1;
 Speed = 16;
 MoveTime = 0;
-
+owner=false; //false=Player1, true=Player2;
 </string>
           </argument>
         </arguments>
@@ -103,6 +103,34 @@ else if(y&gt;=room_height-25){
         y--;   
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Enemies destroy on Collision
+if(place_meeting(x,y,EnemyParent_ob)){
+    hit = instance_place(x,y,EnemyParent_ob)
+    if(hit.owner!=owner){
+        instance_destroy(hit);
+        instance_destroy();
+    }
+}
 </string>
           </argument>
         </arguments>
