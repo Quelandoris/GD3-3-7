@@ -40,7 +40,7 @@
           <argument>
             <kind>1</kind>
             <string>Angle=0;
-Speed=1;
+Speed=0.75;
 </string>
           </argument>
         </arguments>
