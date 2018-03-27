@@ -65,19 +65,23 @@ Speed=0.75;
             <kind>1</kind>
             <string>if(Dir &lt; 0){
    Player1Manager_ob.money += 25;
-    Enemy = instance_create(x,y + 32,MidE_ob); 
+    Enemy = instance_create(x,y + 32,MidE_ob);
+    Enemy.owner=owner; 
     Enemy.Dir = -1;
     Enemy.Angle=360-33;
-    Enemy = instance_create(x,y - 32,MidE_ob); 
+    Enemy = instance_create(x,y - 32,MidE_ob);
+    Enemy.owner=owner; 
     Enemy.Dir = -1;
     Enemy.Angle=33;
 }
 else if (Dir &gt; 0){
     Player2Manager_ob.money += 25;
-     Enemy = instance_create(x,y + 32,MidE_ob); 
+     Enemy = instance_create(x,y + 32,MidE_ob);
+     Enemy.owner=owner; 
      Enemy.Dir = 1;
      Enemy.Angle=360-33;
-     Enemy = instance_create(x,y - 32,MidE_ob);  
+     Enemy = instance_create(x,y - 32,MidE_ob);
+     Enemy.owner=owner;  
      Enemy.Dir = 1;
      Enemy.Angle=33;
 }
