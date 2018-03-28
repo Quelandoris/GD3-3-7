@@ -72,7 +72,7 @@ if(global.GameMode == 1){
     if(gamepad_button_check(0,gp_shoulderrb)) shoot = true;
 }
 
-if(up &amp;&amp; y&gt;sprite_height/2 + 64) y-=ShipSpeed;
+if(up &amp;&amp; y&gt;sprite_height/2 + 128) y-=ShipSpeed;
 if(down &amp;&amp; y&lt;room_height-(sprite_height/2)) y+=ShipSpeed;
 if(shoot &amp;&amp; ShootTimer&gt;=room_speed/4){
     bullet = instance_create(x-sprite_width/2,y,BoolletSmolMacho_ob);

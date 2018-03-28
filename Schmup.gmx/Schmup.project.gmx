@@ -18,6 +18,9 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\shd_test.shader</shader>
+  </shaders>
   <fonts name="fonts">
     <font>fonts\Font_ft</font>
   </fonts>
@@ -38,6 +41,7 @@
     <object>objects\P1WIn</object>
     <object>objects\P2Win</object>
     <object>objects\obj_restart</object>
+    <object>objects\fx_manager_ob</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\TitleScreen</room>

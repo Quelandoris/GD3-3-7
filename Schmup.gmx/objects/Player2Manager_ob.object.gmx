@@ -73,7 +73,7 @@ if(HP &lt;= 0){
 //Check if collided witrh enemy
 if(!instance_exists(Player2_ob)){
     if(deadtimer&gt;=75 &amp;&amp; Lives&gt;0){
-        new = instance_create(736,192,Player2_ob);
+        new = instance_create(1536,192,Player2_ob);
         new.image_angle = 90;
     }
 }
@@ -172,17 +172,17 @@ if(instance_exists(Player2_ob)){
             <string>///Draw UI for P2
 
 //HP
-draw_healthbar(room_width-42,10,room_width-142,30,(HP/MaxHP)*100,c_gray,c_red,c_red,1,true,true);
+draw_healthbar(view_wport[0]-42,10,view_wport[0]-142,30,(HP/MaxHP)*100,c_gray,c_red,c_red,1,true,true);
 
 //Lives
 draw_set_halign(fa_right);
 draw_set_font(Font_ft);
 draw_set_colour(c_white);
-if(Lives&gt;0) draw_text(room_width-42,32,"LIVES: " + string(Lives));
-else draw_text(room_width-42,32,"INSERT COIN");
+if(Lives&gt;0) draw_text(view_wport[0]-42,32,"LIVES: " + string(Lives));
+else draw_text(view_wport[0]-42,32,"INSERT COIN");
 
 //Money
-draw_text(room_width-42,47,"$" + string(money));
+draw_text(view_wport[0]-42,47,"$" + string(money));
 </string>
           </argument>
         </arguments>
